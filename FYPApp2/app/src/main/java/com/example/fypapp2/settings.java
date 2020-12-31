@@ -27,6 +27,7 @@ public class settings extends AppCompatActivity {
 
 
 
+    //Code for settings menu
     @Override
     protected void onStop() {
         super.onStop();

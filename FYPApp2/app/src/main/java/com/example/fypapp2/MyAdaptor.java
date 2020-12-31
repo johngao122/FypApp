@@ -21,6 +21,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+
+
+// Code for recycler view adaptor that shows all the iot mqtt message data
 public class MyAdaptor extends RecyclerView.Adapter<MyAdaptor.MyViewHolder> {
 
 

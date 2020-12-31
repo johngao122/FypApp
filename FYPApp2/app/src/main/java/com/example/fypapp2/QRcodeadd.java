@@ -21,6 +21,8 @@ import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import java.io.IOException;
 
+
+//code to add qr code scanning functionality for adding devices to the list
 public class QRcodeadd extends AppCompatActivity{
     private static final int PERMISSION_REQUEST_CAMERA = 0;
 
@@ -46,20 +48,24 @@ public class QRcodeadd extends AppCompatActivity{
     private void initialiseDetectorsAndSources() {
 
 
-
+        //initialize barcode reader function
         barcodeDetector = new BarcodeDetector.Builder(this)
                 .setBarcodeFormats(Barcode.ALL_FORMATS)
                 .build();
 
+        //determine camera resolution
         cameraSource = new CameraSource.Builder(this, barcodeDetector)
                 .setRequestedPreviewSize(1920, 1080)
                 .setAutoFocusEnabled(true)
                 .build();
 
+        //update camera vision to surfaceview
         surfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
             @Override
             public void surfaceCreated(SurfaceHolder holder) {
                 try {
+
+                    //start camera
                     if (ActivityCompat.checkSelfPermission(QRcodeadd.this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                         cameraSource.start(surfaceView.getHolder());
                     } else {
@@ -90,6 +96,8 @@ public class QRcodeadd extends AppCompatActivity{
             @Override
             public void release() {
             }
+
+            //qr code detection logic
 
             @Override
             public void receiveDetections(Detector.Detections<Barcode> detections) {

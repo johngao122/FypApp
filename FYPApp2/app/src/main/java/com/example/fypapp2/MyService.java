@@ -48,6 +48,9 @@ import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.UUID;
 
+
+//Service code for basic it functions when the app is off
+
 public class MyService extends Service {
     public MyService() {
     }

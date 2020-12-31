@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    //Button function for login listener
     private View.OnClickListener loginListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -106,6 +107,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
+
+    //Button function for register
     private View.OnClickListener registerlistener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -179,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
         Register.setOnClickListener(registerlistener);
         path_2.setOnClickListener(loginListener);
 
-
+        //Initialize AWS mobile client with instance details so that it can determine login condition.
         AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback<UserStateDetails>() {
 
                     @Override

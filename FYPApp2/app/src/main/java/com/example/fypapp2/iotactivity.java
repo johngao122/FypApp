@@ -71,6 +71,8 @@ public class iotactivity extends Activity {
     RecyclerView recyclerView;
     ArrayList<String> Name, Data;
 
+
+    //Permission index number for camera
     private static final int REQUEST_CAMERA_PERMISSION = 201;
 
 
@@ -117,7 +119,7 @@ public class iotactivity extends Activity {
 
 
 
-
+    //Update the ui elements back to the state that was before the app was closed
     @Override
     protected void onResume() {
         super.onResume();
@@ -144,7 +146,11 @@ public class iotactivity extends Activity {
         btndisconnect = (FloatingActionButton) findViewById(R.id.btdisconnect);
         btndisconnect.setOnClickListener(disconnectClick);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+
+
         loadData();
+
+        //To stop service when app is launched again
         Intent serviceintent = new Intent(this,MyService.class);
         stopService(serviceintent);
         //To generate a unique uuid
@@ -157,9 +163,10 @@ public class iotactivity extends Activity {
                 MY_REGION
         );
 
+        //Get region details
         Region region = Region.getRegion(MY_REGION);
 
-
+        //Initialize IOT mqtt manager
         mqttManager = new AWSIotMqttManager(clientId, CUSTOMER_SPECIFIC_ENDPOINT);
 
 
@@ -200,6 +207,7 @@ public class iotactivity extends Activity {
             Log.e(LOG_TAG, "An error occurred retrieving cert/key from keystore.", e);
         }
 
+        //When there is no keystore present in the phone storage
         if (clientKeyStore == null) {
             Log.i(LOG_TAG, "Cert/key was not found in keystore - creating new key and certificate.");
 
@@ -257,7 +265,7 @@ public class iotactivity extends Activity {
 
     }
 
-
+    //Button function for connecting
     View.OnClickListener connectClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -269,6 +277,8 @@ public class iotactivity extends Activity {
         }
     };
 
+
+    //Logic to determine what request the app received and carry out the code accordingly
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -288,6 +298,7 @@ public class iotactivity extends Activity {
             }
 
         }
+        //Delete device code
         if (requestCode == 98) {
             if (resultCode == Activity.RESULT_OK) {
                 Boolean delete = data.getBooleanExtra("Delete", false);
@@ -314,7 +325,7 @@ public class iotactivity extends Activity {
         }
     }
 
-
+    //Button function for disconnect
     View.OnClickListener disconnectClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -330,6 +341,7 @@ public class iotactivity extends Activity {
         }
     };
 
+    //button function to add device
     private View.OnClickListener addclick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -339,6 +351,8 @@ public class iotactivity extends Activity {
         }
     };
 
+
+    //save display data and user details into shared preferences
     private void savedata() {
         SharedPreferences sharedPreferences = getSharedPreferences(email, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -351,6 +365,7 @@ public class iotactivity extends Activity {
         editor.apply();
     }
 
+    //load display data and user details from shared preferences
     private void loadData() {
         email = getIntent().getStringExtra("email");
         SharedPreferences sharedPreferences = getSharedPreferences(email, MODE_PRIVATE);
@@ -377,6 +392,8 @@ public class iotactivity extends Activity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
+
+    //start service when app is closed or destroyed
     @Override
     protected void onStop() {
         super.onStop();
@@ -396,6 +413,7 @@ public class iotactivity extends Activity {
         savedata();
     }
 
+    //logic to process information from incoming mqtt payload
     public void Processdata(String msg) {
         try {
             jsonObject = new JSONObject(msg);
@@ -481,6 +499,7 @@ public class iotactivity extends Activity {
         }
     }
 
+    //Update ui elements according to updated variables
     private void updateui(String device){
 
         String displaymsg = "";
@@ -512,7 +531,7 @@ public class iotactivity extends Activity {
     }
 
 
-
+    //Update variable data from incoming activity requests
     private void updatevar(String device){
         SharedPreferences sharedPreferences = getSharedPreferences(device,MODE_PRIVATE);
         temp = sharedPreferences.getBoolean("Temp",false);
@@ -554,6 +573,7 @@ public class iotactivity extends Activity {
 
     }
 
+    //function to connect to iot service
     private void mqttconnect(){
         try {
             mqttManager.connect(clientKeyStore, new AWSIotMqttClientStatusCallback() {

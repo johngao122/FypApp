@@ -25,7 +25,7 @@ public class CodeActivity extends AppCompatActivity {
 
     private View rectangle_4;
 
-
+    //Confirm sign up function using email code
     private View.OnClickListener listener1 = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -73,6 +73,8 @@ public class CodeActivity extends AppCompatActivity {
         }
     };
 
+
+    //Ensure that user is signed out when app is destroyed
     @Override
     protected void onStop() {
         super.onStop();

@@ -41,6 +41,8 @@ import android.text.TextUtils;
 import android.util.Log;
 
 
+//Imported TinyDB library (DEPRECIATED)
+
 public class TinyDB {
 
     private SharedPreferences preferences;

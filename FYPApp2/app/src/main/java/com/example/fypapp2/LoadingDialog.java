@@ -7,6 +7,8 @@ import android.app.Application;
 import android.view.LayoutInflater;
 import android.widget.Toast;
 
+
+//Function to display loading dialog
 public class LoadingDialog extends Application {
 
     Activity activity;
