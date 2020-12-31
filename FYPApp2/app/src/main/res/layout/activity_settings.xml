@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".settings">
+
+
+    <RelativeLayout
+        android:id="@+id/page_settings_ek1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <View
+            android:id="@+id/rectangle_8"
+            android:layout_width="match_parent"
+            android:layout_height="272dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="-5dp"
+            android:layout_marginLeft="0dp"
+            android:background="@drawable/rectangle_8_shape" />
+
+        <ImageView
+            android:id="@+id/microchip_ek3"
+            android:layout_width="127dp"
+            android:layout_height="127dp"
+            android:layout_marginStart="130dp"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="49dp"
+            android:contentDescription="microchip_ek3"
+            android:src="@drawable/microchip_ek3" />
+
+        <View
+            android:id="@+id/ellipse_6"
+            android:layout_width="150dp"
+            android:layout_height="143dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="120dp"
+            android:layout_marginLeft="121dp"
+            android:layout_marginTop="43dp"
+            android:layout_marginEnd="121dp" />
+
+
+        <RelativeLayout
+            android:id="@+id/component_5___1"
+            android:layout_width="291dp"
+            android:layout_height="57dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="210dp"
+            android:layout_marginEnd="35dp">
+
+            <TextView
+                android:id="@+id/device_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="Roboto"
+                android:text="@string/device_name_string"
+                android:textColor="@color/scan_the_device_qr_code_color"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/page_settings_ek1">
+
+        <LinearLayout
+            android:id="@+id/templayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/temp" />
+
+            <CheckBox
+                android:id="@+id/tempcheck"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="Temperature" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Alert when:"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/alerttemp"
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="°C"
+                android:inputType="phone"
+                android:phoneNumber="false" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/adclayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/adc" />
+
+            <CheckBox
+                android:id="@+id/adccheck"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="ADC" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="           Alert when:"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/alertadc"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="%"
+                android:inputType="phone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/humidlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/humidity" />
+
+            <CheckBox
+                android:id="@+id/humidcheck"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Humidity" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="     Alert when:"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/alerthumid"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="%"
+                android:inputType="phone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pressurelayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/pressure" />
+
+            <CheckBox
+                android:id="@+id/pressurecheck"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="Pressure" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="     Alert when:"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/alertpressure"
+                android:layout_width="44dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="hPa"
+                android:inputType="phone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/digitallayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/logic" />
+
+            <CheckBox
+                android:id="@+id/digitalcheck"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Digital Pin" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="107dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="    Alert when:"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/alertdig"
+                android:layout_width="45dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:entries="@array/logic" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dig2layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/logic" />
+
+            <CheckBox
+                android:id="@+id/digital2check"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Digital Pin 2" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Alert when"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/alertdig2"
+                android:layout_width="45dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:entries="@array/logic" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/rectangle_9"
+        android:layout_width="145dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/rectangle_9_shape"
+        app:layout_constraintEnd_toStartOf="@+id/rectangle_10"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <View
+        android:id="@+id/rectangle_10"
+        android:layout_width="145dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/rectangle_10_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/done_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="Roboto"
+        android:text="@string/done__string"
+        android:textColor="@color/scan_the_device_qr_code_color"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_9"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_9"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_9"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_9" />
+
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:contentDescription="delete"
+        android:src="@drawable/delete"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_10"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_10"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_10"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_10" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

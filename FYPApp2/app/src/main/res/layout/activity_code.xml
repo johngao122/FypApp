@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CodeActivity">
+
+    <ScrollView
+        android:id="@+id/code"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/content_container"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+
+            <RelativeLayout
+                android:id="@+id/page_code_ek1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp">
+
+                <View
+                    android:id="@+id/_bg__code_ek2"
+                    android:layout_width="match_parent"
+                    android:layout_height="847dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/_bg__code_ek2_shape" />
+
+                <TextView
+                    android:id="@+id/enter_the_code_found_______in_your_email"
+                    android:layout_width="282dp"
+                    android:layout_height="84dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="64dp"
+                    android:layout_marginLeft="54dp"
+                    android:layout_marginTop="141dp"
+                    android:layout_marginEnd="64dp"
+                    android:fontFamily="Roboto"
+                    android:text="@string/enter_the_code_found_______in_your_email_string"
+                    android:textColor="@color/email_color"
+                    android:textSize="14sp" />
+
+                <View
+                    android:id="@+id/rectangle_3"
+                    android:layout_width="194dp"
+                    android:layout_height="84dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="109dp"
+                    android:layout_marginLeft="97dp"
+                    android:layout_marginTop="342dp"
+                    android:layout_marginEnd="108dp"
+                    android:background="@drawable/rectangle_3_shape" />
+
+                <EditText
+                    android:id="@+id/codeTextBox"
+                    android:layout_width="150dp"
+                    android:layout_height="53dp"
+                    android:layout_alignStart="@+id/rectangle_3"
+                    android:layout_alignTop="@+id/rectangle_3"
+                    android:layout_alignEnd="@+id/rectangle_3"
+                    android:layout_alignBottom="@+id/rectangle_3"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginEnd="21dp"
+                    android:layout_marginBottom="13dp"
+                    android:ems="10"
+                    android:hint="Code"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/proceedButton"
+                    android:layout_width="143dp"
+                    android:layout_height="70dp"
+                    android:layout_below="@+id/rectangle_3"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="128dp"
+                    android:layout_marginTop="123dp"
+                    android:layout_marginEnd="122dp"
+                    android:text="Proceed" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/reference__"
+                android:layout_width="104dp"
+                android:layout_height="56dp"
+                android:layout_marginLeft="426dp"
+                android:layout_marginTop="-693dp"
+                android:fontFamily="Roboto"
+                android:text="@string/reference___string"
+                android:textColor="@color/scan_the_device_qr_code_color"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">FYPApp2</string>
+
+
+    <string-array name="logic">
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+    <string name="ek_img_content">ExportKit Image</string>
+    <string name="email_string">Email</string>
+    <string name="password_string">Password</string>
+    <string name="login_string">Login</string>
+    <string name="new_here__string">New here?</string>
+    <string name="enter_details_above_and_tap_the_button_below__string">Enter details above and tap the plus button</string>
+    <string name="____label_string">Resting</string>
+    <string name="____label_ek1_string">Hover</string>
+    <string name="____label_ek2_string">Focused</string>
+    <string name="____label_ek3_string">Pressed</string>
+    <string name="____label_ek4_string">Resting</string>
+    <string name="____label_ek5_string">Hover</string>
+    <string name="____label_ek6_string">Focused</string>
+    <string name="____label_ek7_string">Pressed</string>
+    <string name="caption_string">FAB</string>
+    <string name="enter_the_code_found_______in_your_email_string">Enter the code found      in your email</string>
+    <string name="proceed_string">Proceed</string>
+    <string name="scan_the_device_qr_code_string">Scan the Device QR Code</string>
+    <string name="align_the_qr_code_into_the_box__string">Align the QR Code into the box</string>
+    <string name="title_text__string">Title Text</string>
+    <string name="data_text__string">Data Text</string>
+    <string name="status__string">Status:</string>
+    <string name="connected_string">Connected</string>
+    <string name="title_text__ek1_string">Title Text</string>
+    <string name="data_text__ek1_string">Data Text</string>
+    <string name="title_text__ek2_string">Title Text</string>
+    <string name="data_text__ek2_string">Data Text</string>
+    <string name="device_name_string">Device name</string>
+    <string name="done__string">Done</string>
+    <string name="reference___string">Reference*</string>
+</resources>

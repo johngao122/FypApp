@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "fypapp251db85bb": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
